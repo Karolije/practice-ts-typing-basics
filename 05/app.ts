@@ -33,15 +33,13 @@ type BaseRule = {
       const valObj = values.find(v => v.name === rule.name);
       const val = valObj?.value;
   
-      // Sprawdzenie wymagalności pola
       if (rule.required) {
         if (val === undefined || val === null || val === "") {
           errors.push({ name: rule.name, error: rule.errorMessage });
-          continue; // jeśli pole wymagane jest puste, nie sprawdzamy dalej
+          continue; 
         }
       }
   
-      // Walidacja specyficzna dla typu
       switch (rule.type) {
         case "string":
           if (typeof val !== "string") {
