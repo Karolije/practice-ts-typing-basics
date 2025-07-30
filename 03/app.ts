@@ -25,6 +25,8 @@ function concatenate(a: any, b: any): any {
         return [...a, ...b];
       } else if ( typeof a === "object" && typeof b === "object") {
         return { ...a, ...b }
+      }else {
+        throw new Error("Invalid arguments for concatenate()");
       }
     
 }

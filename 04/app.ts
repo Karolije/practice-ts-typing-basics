@@ -38,8 +38,7 @@ function generateForm(...fields: FormField[]): HTMLFormElement {
 
       input = selectElement;
     } else {
-      continue;
-    }
+      throw new Error("Nieznany typ pola.");    }
 
     form.appendChild(input);
   }
